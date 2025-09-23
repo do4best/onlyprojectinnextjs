@@ -20,7 +20,16 @@ function ToDoApp(props) {
         setTodo([...todo, newToDoItems]);
         setTest("");
     };
-
+    const handelToggle = (itemId) => {
+        const newTodo = todo.map((item) => {
+            if (item.id === itemId){
+                return { ...item, done: !item.done };
+            }
+            return item;
+        });
+        setTodo(newTodo);
+    }
+console.log(todo)
     return (
         <>
             <div className="flex flex-col justify-center items-center">
@@ -30,7 +39,7 @@ function ToDoApp(props) {
                     <FaPlus size={40} onClick={addItems} />
                 </div>
 
-                <TodoList todoList={todo} />
+                <TodoList todoList={todo} handelToggle={handelToggle} />
             </div>
         </>
     );
