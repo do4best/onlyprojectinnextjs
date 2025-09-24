@@ -29,17 +29,21 @@ function ToDoApp(props) {
         });
         setTodo(newTodo);
     }
-console.log(todo)
+    const handelDelete = (itemID) => {
+        const newToDo=todo.filter((item) => item.id !== itemID);
+        setTodo(newToDo)
+    }
+
     return (
         <>
             <div className="flex flex-col justify-center items-center">
-                <h1>Hello To Do App</h1>
-                <div className=" flex justify-center items-center ">
-                    <input type="text" className="input" value={test} onChange={(e) => setTest(e.target.value)} />
+                <h1 className={"text-success text-4xl m-5"}>Hello To Do App</h1>
+                <div className=" flex justify-center items-center gap-4 ">
+                    <input type="text" className="input input-lg" placeholder={"Input your ToDo's"} value={test} onChange={(e) => setTest(e.target.value)} />
                     <FaPlus size={40} onClick={addItems} />
                 </div>
 
-                <TodoList todoList={todo} handelToggle={handelToggle} />
+                <TodoList todoList={todo} handelToggle={handelToggle} handelDelete={handelDelete} />
             </div>
         </>
     );
