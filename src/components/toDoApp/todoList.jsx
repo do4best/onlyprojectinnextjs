@@ -13,7 +13,7 @@ function TodoList({ todoList,handelToggle,handelDelete }) {
                         key={listItem.id}
                         className={`list-row flex flex-row items-center m-5 justify-between px-3 py-2 ${listItem.done ? 'line-through bg-red-500' : 'bg-white text-black'}`}
                     >
-                        <span className="truncate pr-3">{listItem.item}</span>
+                       {listItem.item}
                         <div className="flex items-center gap-1">
                             <span className="btn btn-square btn-ghost">
                                 {listItem.done ? (
