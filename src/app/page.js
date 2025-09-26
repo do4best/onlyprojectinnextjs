@@ -1,10 +1,10 @@
-import Image from "next/image";
-import ToDoApp from "@/components/toDoApp/toDoApp";
+import MainToDo from "@/components/toDoListRevisited/mainToDo";
+
 
 export default function Home() {
   return (
 <>
-<ToDoApp/>
+<MainToDo/>
 </>
   );
 }
