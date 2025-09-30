@@ -29,7 +29,7 @@ function MainToDo(props) {
         <>
         <h1 className="text-success text-3xl text-center">ToDo's Revisited</h1>
             <div className=" flex flex-col justify-center items-center">
-                <input type="text" className="input" value={text} onChange={(e) => setText(e.target.value)} />
+                <input type="text" className="input" value={text===""?alert("Please filled again"):text} onChange={(e) => setText(e.target.value)} />
 <FaPlus size={40} onClick={addTodo}/>
             <ListAgain myList={todoAgain} handelClick={handelToggle}/>
             </div>

@@ -39,7 +39,7 @@ function ToDoApp(props) {
             <div className="flex flex-col justify-center items-center">
                 <h1 className={"text-success text-4xl m-5"}>Hello To Do App</h1>
                 <div className=" flex justify-center items-center gap-4 ">
-                    <input type="text" className="input input-lg" placeholder={"Input your ToDo's"} value={test} onChange={(e) => setTest(e.target.value)} />
+                    <input type="text" className="input input-lg" placeholder={"Input your ToDo's"} value={test===''?alert("Please input first"):test} onChange={(e) => setTest(e.target.value)} />
                     <FaPlus size={40} onClick={addItems} />
                 </div>
 
